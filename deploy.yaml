@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deploy
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: template-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: templatecontainer
+          image: atul8121990/template
+  selector:
+    matchLabels:
+      app: nginx
